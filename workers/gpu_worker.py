@@ -55,6 +55,7 @@ class GPUWorker:
 
         result_container["result"] = {
             "id": request.id,
+            "worker_id": self.id,
             "result": result,
             "latency": latency
         }
