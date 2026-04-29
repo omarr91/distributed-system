@@ -8,5 +8,6 @@ class Request:
 @dataclass
 class Response:
     id: int
+    worker_id: int
     result: str
     latency: float
