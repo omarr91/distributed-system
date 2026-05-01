@@ -24,6 +24,6 @@ def retrieve_context(query, top_k=3):
     # Return top_k results
     top_results = [doc for doc, score in ranked[:top_k]]
     
-    print(f"[RAG] Retrieved {top_k} context chunks for query: '{query}'")
+    #print(f"[RAG] Retrieved {top_k} context chunks for query: '{query}'")
     
     return " | ".join(top_results)

@@ -27,7 +27,7 @@ def main():
     strategy = choose_strategy()
 
     num_users = int(input("Enter number of users: "))
-    
+
     print(f"\n🚀 Running with strategy: {strategy}\n")
 
     # Create workers
@@ -40,6 +40,6 @@ def main():
     scheduler = Scheduler(lb)
 
     # Run test
-    run_load_test(scheduler, num_users=1000)
+    run_load_test(scheduler, num_users)
 
 main()

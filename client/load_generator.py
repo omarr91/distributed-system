@@ -5,6 +5,7 @@ import time
 from queue import Queue
 from common.models import Request
 
+
 def simulate_user(scheduler, user_id, result_list=None):
     request = Request(id=user_id, query=f"Query {user_id}")
     response = scheduler.handle_request(request)
@@ -43,3 +44,5 @@ def run_load_test(scheduler, num_users=1000):
     for i in range(len(results)): avg_latency += results[i]["latency"]
 
     avg_latency = avg_latency / len(results)
+
+    print(f"Average Latency: {avg_latency:.3f}\t\tThroughput: {throughput:.3f}\t\tNumber of Workers: {num_of_workers}")
