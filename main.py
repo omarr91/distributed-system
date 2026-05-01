@@ -26,6 +26,8 @@ def choose_strategy():
 def main():
     strategy = choose_strategy()
 
+    num_users = int(input("Enter number of users: "))
+    
     print(f"\n🚀 Running with strategy: {strategy}\n")
 
     # Create workers
@@ -40,18 +42,4 @@ def main():
     # Run test
     run_load_test(scheduler, num_users=1000)
 
-while True:
-    strategy = choose_strategy()
-    print(f"\n🚀 Running with strategy: {strategy}\n")
-
-    workers = [GPUWorker(i) for i in range(4)]
-    lb = LoadBalancer(workers, strategy=strategy)
-    scheduler = Scheduler(lb)
-
-    run_load_test(scheduler, num_users=1000)
-
-    again = input("\nRun again? (y/n): ")
-    if again.lower() != "y":
-        break
-if __name__ == "__main__":
-    main()
+main()
