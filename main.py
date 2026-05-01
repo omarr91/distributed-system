@@ -10,13 +10,13 @@ def choose_strategy():
     print("2. Least Connections")
     print("3. Load Aware")
 
-    choice = input("Choose a strategy (1-3): ")
+    choice = int(input("Choose a strategy (1-3): "))
 
-    if choice == "1":
+    if choice == 1:
         return "round_robin"
-    elif choice == "2":
+    elif choice == 2:
         return "least_connections"
-    elif choice == "3":
+    elif choice == 3:
         return "load_aware"
     else:
         print("❌ Invalid choice, defaulting to Round Robin")
