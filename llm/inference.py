@@ -1,7 +1,10 @@
-import time
-import random
+from transformers import pipeline 
 
-def run_llm(query, context):
-    # Simulate GPU inference delay
-    time.sleep(random.uniform(0.2,5.0))
-    return f"LLM Answer to '{query}' using [{context}]"
+pipe = pipeline("text-generation", model="google/gemma-3-1b-it")
+def run_llm(query,context):
+    messages = [
+    {"role": "user", "content": "Who are you?"},
+    ]
+    pipe(messages)
+
+run_llm("test","test")
